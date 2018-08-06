@@ -16,6 +16,7 @@ var configApi = {
   getArticleDetail: getServerUrl("/commons/get_article.api"),   //通用-文章详情
   getLocationsDetail: getServerUrl("/locations/get.api"),   //通用-获取足迹详情
   getIdentifications: getServerUrl("/identifications/list.api"),   //鉴定 - 获取鉴定列表
+  hotlist: getServerUrl("/identifications/hotlist.api"),   //获取热门鉴定（4条）
   getIdentifiDetail: getServerUrl("/identifications/get.api"),   //鉴定 - 获取鉴定信息
   getRecommend: getServerUrl("/locations/list.api"),   //足迹 - 获取足迹列表，陌生人发布的(推荐)
   getFollowed: getServerUrl("/locations/followed_list.api"),   //足迹 - 获取足迹列表，关注人发布的(关注)

@@ -1,3 +1,6 @@
 <!--pages/articleDetail/articleDetail.wxml-->
+<view style=' margin:0 20rpx;'>
  <articleDetail bind:back="_back" bind:more="_more" bind:personalPage="_personalPage" articleInfo="{{articleInfo}}" article_contents="{{article_contents}}"></articleDetail> 
+</view>
+
 

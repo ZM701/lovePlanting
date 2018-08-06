@@ -4,6 +4,8 @@ App({
   onLaunch: function () {
     var that =this;
     that.checkLogin()
+
+    console.log("全局",this.globalData)
   },
   //全局变量
   globalData: {
@@ -16,8 +18,11 @@ App({
     var uid = wx.getStorageSync('uid')
     if (uid) { //用户登录了
       console.log("登录了")
+      var uid = wx.getStorageSync('uid')
+      that.globalData.uid =uid;
     } else { //用户没有登录
       wx.navigateTo({
+        
         url: './pages/login/login',
       })
     }
@@ -27,5 +32,6 @@ App({
     uid: '',   //获取用户的uid
     longitude: '',   //获取用户的经度
     latitude: ''    //获取用户的纬度
-  }
+  },
+
 })

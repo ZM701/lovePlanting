@@ -7,6 +7,7 @@ var list1 = [];
 var tool = require('../../utils/tool.js');
 var util = tool.util,//工具手柄
   getPresonIdentify = tool.configApi.getPresonIdentify, // 鉴定 - 个人求鉴定列表
+  hotlist = tool.configApi.hotlist,//4条热门鉴别
   getIdentifications = tool.configApi.getIdentifications;  //鉴定 - 获取鉴定列表
 Page({
 
@@ -43,15 +44,40 @@ Page({
    
   
   },
+  // 获取 前4条热门鉴别
+  getHotList: function () {
+    var that = this;
+    var suCb = function (res) {
+      console.log("热门列表",res)
+      var newlist = that.data.identifications;
+      var arrlist = res.data.content.concat(newlist)
+      that.setData({
+        identifications: arrlist
+      })
+    };
+    var erCb = function (res) {
+      wx.showToast({
+        title: '热门鉴别获取失败',
+      })
+    };
+    var palyParam = {
+      url: hotlist,
+      method: "POST",
+      success: suCb,
+      error: erCb,
+    }
+    util.request(palyParam);
+  },
   // 鉴定 - 获取鉴定列表
   getIdentifications: function (page) {
     var that = this;
     var suCb = function (res) {
-      list = list.concat(res.data.content)
+      list = list.concat(res.data.content);
       that.setData({
         identifications: list
       })
-     console.log(that.data.identifications)
+     console.log(that.data.identifications)  
+      that.getHotList();
     };
     var erCb = function (res) {
       console.log("失败")

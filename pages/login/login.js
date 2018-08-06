@@ -77,7 +77,7 @@ Page({
       wx.setStorageSync("uid", res.data.data.uid);
       wx.setStorageSync("token", res.data.data.token);
       //设置全局的uid
-      app.globalData.uid = res.data.data.uid,
+      app.globalData.uid = res.data.data.uid;
         // app.globalData.uid = 342424,
       // var pages = getCurrentPages() //获取加载的页面
       // console.log(pages)

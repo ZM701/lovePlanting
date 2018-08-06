@@ -55,6 +55,7 @@ Page({
         })
       }
     });
+    console.log("全局uid", app.globalData.uid)
     
 
   },

@@ -20,7 +20,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that =this;
+    var uid = wx.getStorageSync('uid');
+    that.setData({
+      uid: uid
+    })
   },
   //我的
   getMembers: function () {
@@ -36,8 +40,8 @@ Page({
       console.log("失败")
     };
     var postData = {
-      uid: app.globalData.uid,
-      myUid: app.globalData.uid
+      uid: that.data.uid,
+      myUid: that.data.uid
     };
     var palyParam = {
       url: getMembers,

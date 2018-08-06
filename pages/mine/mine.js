@@ -20,7 +20,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    uid:"",
     navData: [
       {
         text: '识别历史',
@@ -57,6 +57,11 @@ Page({
     })
 
     var that = this;
+    var uid = wx.getStorageSync('uid');
+    console.log("===",uid)
+    that.setData({
+      uid:uid
+    })
     //获取屏幕的相关信息
     wx.getSystemInfo({
       success: function (res) {
@@ -80,7 +85,7 @@ Page({
   
   },
   //我的
-  getMembers: function () {
+  getMembers: function (uid) {
     var that = this;
     var suCb = function (res) {
       that.setData({
@@ -89,10 +94,10 @@ Page({
       console.log(res.data)
     };
     var erCb = function (res) {
-      console.log("失败")
+      console.log("失败",res)
     };
     var postData = {
-      uid: app.globalData.uid,
+      uid:uid,
       myUid: app.globalData.uid
     };
     var palyParam = {
@@ -147,7 +152,7 @@ Page({
       console.log("失败")
     };
     var postData = {
-      uid: app.globalData.uid,
+      uid: that.data.uid,
       page: page,
       size:20
     };
@@ -188,7 +193,7 @@ Page({
     };
     var postData = {
       // uid: 342424,
-      uid: app.globalData.uid,
+      uid: that.data.uid,
       page: page,
       size: 20
     };
@@ -262,18 +267,25 @@ Page({
     lists = [];
     page = 1;
     pages = 1;
-    this.getHistory(1);
+    console.log("重现")
+    this.getHistory(1);  
     this.getFoot(1);
         
   
+  },
+  /**
+  * 页面相关事件处理函数--监听用户下拉动作
+  */
+  onPullDownRefresh: function () {
+    this.getHistory(1);
+    this.getFoot(1);
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getMembers();
-        
+    this.getMembers(this.data.uid);
   },
 
   
