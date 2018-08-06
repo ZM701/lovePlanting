@@ -1,0 +1,38 @@
+<!--pages/template/footer/footer.wxml-->
+<template name="footer">
+  <cover-view class='footer'>
+    <cover-view class='cover'></cover-view>
+    <cover-view bindtap='nearby' class="box">
+      <cover-view class="others">
+        <cover-image wx:if="{{array_pl==0}}" src="/images/attened.png" mode="widthFix" class='imgs map'></cover-image>
+        <cover-image wx:else src="/images/atten.png" mode="widthFix" class='imgs map'></cover-image>
+      </cover-view>
+      <cover-view class="{{array_pl==0?'is_checked':'normal'}}">附近</cover-view>
+    </cover-view>
+    <cover-view bindtap='find' class="box">
+      <cover-view class="others">
+        <cover-image wx:if="{{array_pl1==1}}" src="/images/fined.png" mode="widthFix" class='imgs'></cover-image>
+        <cover-image wx:else src="/images/find.png" mode="widthFix" class='imgs'></cover-image>
+      </cover-view>
+      <cover-view class="{{array_pl1==1?'is_checked':'normal'}}">发现</cover-view>
+    </cover-view>
+     <cover-view bindtap='index' class="box index">
+      <cover-image src="/images/carama1.png" mode="widthFix" class='images'></cover-image>
+    </cover-view> 
+ 
+    <cover-view bindtap='identify' class="box">
+      <cover-view class="others">
+        <cover-image wx:if="{{array_pl2==2}}" src="/images/identitied.png" mode="widthFix" class='imgs'></cover-image>
+        <cover-image wx:else src="/images/identity.png" mode="widthFix" class='imgs'></cover-image>
+      </cover-view>
+      <cover-view class="{{array_pl2==2?'is_checked':'normal'}}">鉴别</cover-view>
+    </cover-view>
+    <cover-view bindtap='mine' class="box">
+      <cover-view class="others">
+        <cover-image wx:if="{{array_pl3==3}}" src="/images/mined.png" mode="widthFix" class='imgs'></cover-image>
+        <cover-image wx:else src="/images/mine.png" mode="widthFix" class='imgs'></cover-image>
+      </cover-view>
+      <cover-view class="{{array_pl3==3?'is_checked':'normal'}}">我的</cover-view>
+    </cover-view>
+  </cover-view>
+</template>

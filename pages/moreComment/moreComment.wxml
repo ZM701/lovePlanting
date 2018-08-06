@@ -1,0 +1,28 @@
+<!--pages/moreComment/moreComment.wxml-->
+<view class='hot'>
+  <view class='recomment'>
+    <view class='user'><image src="../../images/user.png"></image></view>
+    <view class='info'>
+      <view class='nick'>
+        <view>昵称</view>
+        <view class='thumbs'>
+          <view><image src='../../images/icon4.png'></image><text>35</text></view>
+          <!-- <view><image src='../../images/icon5.png'></image><text>35</text></view> -->
+        </view>
+      </view>
+      <text class='numbers'>36楼 02-28</text>
+      <text class='recontent'>评论内容评论内容评论内容</text>
+      <view class='replay'>
+          <view><text class='first'>昵称：</text><text>评论内容评论内容评论内容</text></view>
+          <view><text class='first'>昵称：</text><text>评论内容评论内容评论内容</text></view>
+      </view>       
+    </view>
+  </view>
+
+    <!-- 回复 -->
+  <view class='say'>
+    <view><input type='text'></input></view>
+    <view>回复</view>
+  </view>
+
+</view>

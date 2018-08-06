@@ -1,0 +1,57 @@
+<!--components/personalPage/personalPage.wxml-->
+<view class='nav'>
+  <view class='bg'><image src="../../images/bg2.png" mode="aspectFill"></image></view>
+  <!-- <view class='navback'><image src="../../images/back.png" catchtap='_back'></image><text>发私信</text></view> -->
+  <view class='userInfo'>
+    <view class='box1'><image src='{{members.avatar}}'></image></view>
+    <view class='box2'>
+      <view>
+        <text>{{members.nickname}}</text>
+        <!-- <image src='../../images/woman.png'></image> -->
+        <!-- <text class='attention' wx:if="{{members.isFollow==0}}">+ 关注</text>
+        <text class='attention' wx:if="{{members.isFollow==1}}">已关注</text> -->
+      </view>
+      <view style='font-size:12px;'>{{members.bio}}</view>
+    </view>
+    <view class='box3'><text catchtap='_identify'>鉴别</text> <text>{{members.identificationNum}}</text></view>
+  </view>
+</view>
+
+<view class='foorPrint'><text>识别足迹</text> <text>({{members.locationNum}})</text></view>
+
+<!-- 时间线 -->
+<view class='main'>
+  <block wx:if="{{foot.length==0}}">
+    <view class="none">
+      <image src="../../images/p3.jpg"></image>
+      <view>空空如也</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='total' wx:for="{{foot}}" wx:key="this">
+      <view class='time'><text>{{item.day}}</text><text>{{item.month}}月</text></view>
+      <view class='box'>
+        <view class='dot'></view>
+        <view class='timeLine'>
+          <view class='footprint'>
+            <view class='img' data-locationId="{{item.locationId}}" bindtap='_footprintDetail'><image src='{{item.images[0]}}' mode="aspectFill"></image> <text class='number' wx:if="{{item.images.length>1}}">{{item.images.length}}张</text><text class='look'>{{item.views}}人浏览</text></view>
+            <view class='desc'>
+              <view class='print'>
+                <view>{{item.name}}</view>
+                <!-- <view>足迹心情</view> -->
+              </view>
+              <view class='thums'>
+                <image src='../../images/icon4.png'></image>
+                <text>点赞</text>
+              </view>
+            </view>
+          </view> 
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>
+
+
+

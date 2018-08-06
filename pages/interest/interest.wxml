@@ -1,0 +1,31 @@
+<!--pages/interest/interest.wxml-->
+<block wx:if="{{interestInfo.length==0}}">
+  <view class="none">
+    <image src="../../images/p3.jpg"></image>
+    <view>空空如也</view>
+  </view>
+</block>
+<block wx:else>
+  <view class='list' wx:for="{{interestInfo}}" wx:key="this">
+    <view class='box1' bindtap='personPage' data-uid="{{item.uid}}"><image src="{{item.avatar}}"></image></view>
+    <view class='box2'>
+      <view class='one'>
+        <image wx:if="{{item.gender==1}}" src="../../images/man.png"></image>
+        <image wx:if="{{item.gender==2}}" src="../../images/woman.png"></image>
+        <text>{{item.nickname}}</text></view>
+      <view class='two'>{{item.city}}</view>
+      <view class='three'>识别过同种植物</view>
+    </view>
+    <view class='box3'>
+      <view class='attention' wx:if="{{item.isFollow == 0}}" data-id='{{item.uid}}' data-index='{{index}}' bindtap='attention'>+ 关 注</view> 
+      <!-- <view class='already' wx:if="{{item.isFollow == 1}}" data-id='{{item.uid}}' bindtap='cancleAttention'><image src="../../images/icon6.png"></image><text>已关注</text></view>  -->
+      
+
+    <!-- <text class='attention' wx:if="{{dataInfo.isFollow == 0}}" catchtap='_attention'>+ 关注</text> 
+    <view class='res' wx:if="{{dataInfo.isFollow == 1}}" catchtap='_cancleAttention'><image src="../../images/icon6.png"></image>已关注</view>   -->
+
+
+    </view>
+  </view>
+</block>
+

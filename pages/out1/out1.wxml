@@ -1,0 +1,2 @@
+<!--pages/out1/out1.wxml-->
+<web-view src="http://android.myapp.com/myapp/detail.htm?apkName=com.sinosoft.nanniwan"></web-view> 

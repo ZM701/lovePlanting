@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "植拍",
+  "usingComponents": {
+    "footprint": "/components/footprint/footprint"
+  }
+}

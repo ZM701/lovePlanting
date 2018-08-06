@@ -1,0 +1,18 @@
+<!--pages/identify/identify.wxml-->
+<import src="../template/footer/footer.wxml"/>
+
+ 
+<!--pages/personIdentify/personIdentify.wxml-->
+<scroll-view scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltolower="bindDownLoad">
+  <view class='identify'>
+    <identify identifications="{{identifications}}" bind:identifyDetail="_identifyDetail"></identify>
+  </view>
+</scroll-view>
+
+<view style='height:30px;'></view> 
+
+
+
+
+
+ <template is="footer" data="{{array_pl,array_pl1,array_pl2,array_pl3}}"></template>  

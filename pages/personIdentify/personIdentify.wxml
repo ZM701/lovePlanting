@@ -1,0 +1,48 @@
+<!--pages/personIdentify/personIdentify.wxml-->
+<view class='identify'>
+  <view class='res'>
+    <view class='imgs'><image src='../../images/img5.png' mode="aspectFill"></image></view>
+    <view class='user'>
+      <view class='userImage'><image src='../../images/user.png' mode="aspectFill"></image></view>
+      <view class='nick'>
+        <image src='../../images/man.png'></image><text>用户昵称</text>
+        <view>蓝银草</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='res'>
+    <view class='imgs'><image src='../../images/img5.png' mode="aspectFill"></image></view>
+    <view class='user'>
+      <view class='userImage'><image src='../../images/user.png' mode="aspectFill"></image></view>
+      <view class='nick'>
+        <image src='../../images/man.png'></image><text>用户昵称</text>
+        <view>未鉴别</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='res'>
+    <view class='imgs'><image src='../../images/img5.png' mode="aspectFill"></image></view>
+    <view class='user'>
+      <view class='userImage'><image src='../../images/user.png' mode="aspectFill"></image></view>
+      <view class='nick'>
+        <image src='../../images/man.png'></image><text>用户昵称</text>
+        <view>蓝银草</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='res'>
+    <view class='imgs'><image src='../../images/img5.png' mode="aspectFill"></image></view>
+    <view class='user'>
+      <view class='userImage'><image src='../../images/user.png' mode="aspectFill"></image></view>
+      <view class='nick'>
+        <image src='../../images/man.png'></image><text>用户昵称</text>
+        <view>未鉴别</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

@@ -1,0 +1,19 @@
+/* pages/personalSign/personalSign.wxss */
+.change{
+  margin: 11rpx 24rpx;
+}
+.section{
+  border-bottom: 1px solid #a9e29a;
+}
+input{
+  color: #b0b0b0;
+  font-size: 24rpx;
+  padding: 5rpx;
+}
+
+.keep{
+  width: 60%;
+  margin-top: 70rpx;
+  background: #a9e29a !important;
+  color: #fff;
+}

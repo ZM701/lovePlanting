@@ -1,0 +1,86 @@
+<!--components/identifyDetail/identifyDetail.wxml-->
+<view>
+<!-- 头部区域 -->
+  <view class='nav'>
+    <view class='bg'><image src="{{ideInfo.image}}" mode="aspectFill"></image></view>
+    <!-- <view class='navback'><image src="../../images/back.png" catchtap='_back'></image><image src="../../images/share.png"></image></view> -->
+    <view class='userIcon' data-uid='{{ideInfo.uid}}' catchtap='_personalPage'><image src="{{ideInfo.avatar}}"></image></view>
+  </view>
+  <!-- 主体区域 -->
+  <view class='userInfo'>
+    <view class='.user'><text>{{ideInfo.nickname}}</text><text>上传于{{ideInfo.month}}月 {{ideInfo.season}}</text></view>
+    <view class='location'><image src="../../images/icon1.png"></image><text>{{ideInfo.location}} 距离我{{ideInfo.distance / 1000}}km</text></view>
+    <view class='res'>鉴别结果</view>
+    <view class='nick'>
+      <text wx:for="{{ideInfo.results}}" wx:key="this" data-name='{{item.name}}' catchtap='_nums'>{{item.name}} ({{item.num}})</text>
+    </view>
+  </view>
+ 
+  
+
+  <view class='hot' style="margin-top:10px; margin-bottom:40px;">
+    <view class='title'>全部评论</view>
+    <view wx:if="{{remarkContent.length==0}}" class='soft'><image src="../../images/soft.png"></image><text>抢沙发  C位出道</text></view>   
+    <view wx:else>
+      <view class='recomment' wx:for="{{remarkContent}}" wx:key="this">
+        <view class='user' data-uid="{{item.uid}}" catchtap='_person'><image src="{{item.avatar}}"></image></view>
+        <view class='info'>
+          <view class='relative'>
+            <text class='nick'>{{item.nickname}}</text>
+          </view>
+          <text class='numbers'>{{item.time}}</text>
+          <text class='recontent'>{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style='height:20px;'></view>
+
+  <!-- 热门回复 -->
+  <!-- <view class='hot'>
+    <view class='title'>热门回复</view>
+    
+    <view class='recomment'>
+      <view class='user'><image src="../../images/user.png"></image></view>
+      <view class='info'>
+        <view class='relative'>
+          <text class='nick'>昵称</text>
+          <view class='thumbs'>
+             <view><image src='../../images/icon4.png'></image><text>35</text></view> 
+          </view>
+        </view>
+        <text class='numbers'>02-28</text>
+        <text class='recontent'>评论内容评论内容评论内容</text>
+      </view>
+    </view>
+
+    <view class='recomment'>
+      <view class='user'><image src="../../images/user.png"></image></view>
+      <view class='info'>
+        <view class='relative'>
+          <text class='nick'>昵称</text>
+          <view class='thumbs'>
+             <view><image src='../../images/icon4.png'></image><text>35</text></view> 
+          </view>
+        </view>
+        <text class='numbers'>02-28</text>
+        <text class='recontent'>评论内容评论内容评论内容</text>
+      </view>
+    </view> 
+
+  </view>-->
+  
+
+
+
+  <!-- 简单说几句 -->
+   <view class='say'>
+    <view><input type='text' name="content" value='{{content}}' placeholder='简单说几句' bindinput='content'></input></view>
+    <!-- <button catchtap='_remark' disabled='{{disabled}}'>评论</button>  -->
+    <view bindtap='_remark' bindtouchstart='_touchStart' bindtouchend='_touchEnd'>评论</view>  
+   </view> 
+    
+
+</view>
+
+

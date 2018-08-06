@@ -1,0 +1,23 @@
+<view class='canvas-box' style='width:{{canvasWidth}}px; height:{{canvasHeight}}px'>
+<view class='back' wx:if="{{pages==11}}"><image src="../../../images/back.png" bindtap='back'></image></view>
+  <!-- <canvas canvas-id="share-map" style="width: 375px; height: 667px;"></canvas> -->
+  <canvas canvas-id="share-map0" style="width: 355px; height: 500px;" wx:if="{{curentIndex ==0}}"></canvas>
+  <canvas canvas-id="share-map1" style="width: 355px; height: 500px;" wx:elif="{{curentIndex ==1}}"></canvas>
+  <canvas canvas-id="share-map2" style="width: 355px; height: 500px;" wx:else="{{curentIndex ==2}}"></canvas>
+</view>
+<view class='bottom-cont'>
+  <view>
+    <swiper autoplay="true" duration="500" display-multiple-items="3" class='swiper'>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image {{index==curentIndex?'curentIndex':''}} " data-id='{{index}}' catchtap='choseModeHadle' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='flexBox flexAlignCen cont-box'>
+    <!-- <view class='share'>转发给朋友</view> -->
+    <button open-type="share" class='share'>转发给朋友</button>
+    <view class='save' catchtap='saveMap'>保存图片</view>
+  </view>
+</view>

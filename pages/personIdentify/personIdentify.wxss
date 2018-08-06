@@ -1,0 +1,59 @@
+/* pages/personIdentify/personIdentify.wxss */
+page{
+  background: #F7F6F6;
+}
+.identify{
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+}
+.identify .res{
+  width: 46%;
+  float: left;
+  background: #fff;
+  margin-right: 8px;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.identify .res:nth-of-type(2n){
+  margin-right: 0px;
+}
+.identify .res .imgs image{
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+}
+.identify .res .user{
+  overflow: hidden;
+  padding-left: 5px;
+}
+.identify .res .user .userImage{
+  margin-right: 5px;
+  padding-top: 8px;
+}
+.identify .res .user .userImage,.identify .res .user .nick{
+   float: left; 
+}
+.identify .res .user .userImage image{
+  width: 30px;
+  height: 30px;
+}
+.identify .nick image{
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+}
+.identify .nick text{
+  font-size: 11px;
+  color: #4b4b4b;
+}
+.identify .nick view{
+  text-align: center;
+  padding:2px 5px;
+  border-radius: 10px;
+  color: #5b5b5b;
+  font-size: 11px;
+  background: #eee;
+  margin-top:5px;
+}

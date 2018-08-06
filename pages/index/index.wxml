@@ -1,0 +1,76 @@
+<!--pages/index/index.wxml-->
+
+<import src="../template/footer/footer.wxml" />
+
+<progress percent="{{progress}}" stroke-width="2" active="true" activeColor="#43bf32" active-mode="backwards" />
+<!-- <template is="footer"></template> -->
+<view class='flexBox flexDireCol ' style="height:{{deviceHeight}}px">
+  <view style=' text-align: center;  '>
+    <view class='continer'>
+      <!-- <image src='../../images/login/logo.png'  wx:if="{{imgUrl == ''}}" class='zanwei'></image> -->
+      <image src='{{imgUrl}}'  class='map-tem' wx:if="{{imgUrl == ''}}"></image>
+      <image src='{{imgUrl}}'  class='tem' wx:else></image>
+      <!-- <image src='{{imgUrl}}' mode='scaleToFill'></image> -->
+    </view>
+  </view>
+  <!-- 识别结果 -->
+  <view class='list-box'>
+    <view style='height:300rpx' wx:if="{{resultLest.length>0}}">
+      <swiper autoplay="{{autoplay}}" duration="500" style='height:100%' bindchange ="bindchange">
+        <block wx:for="{{resultLest}}">
+          <swiper-item>
+            <navigator url='./detail/detail'>
+              <view class='flexBox list-item'>
+                <view class='covers' data-name='{{item.name}}' bindtap='plantDetail'>
+                  <image src='{{item.image}}' mode="aspectFill"></image>
+                  <view>点击查看详情</view> 
+                </view>
+                <view class='flexBox flexDireCol ' style='flex:1'>
+                  <view class='name'>{{item.name}}</view>
+                  <view class='nameEn'>别名:{{item.name}}</view>
+                  <view class='family'>分类：{{item.family}}</view>
+                  <view class='des'>{{item.summary}}</view>
+                </view>
+              </view>
+            </navigator>
+          </swiper-item>
+        </block>
+        <swiper-item>
+          <view class='flexBox list-item'>
+            <view>
+              <image src='{{imgUrl}}' mode="aspectFill"></image>
+            </view>
+            <view class='flexBox flexDireCol ' style='flex:1'>
+              <view class='name'>以上结果都不对</view>
+              <view class='btn' data-recognitionId="{{recognitionId}}" bindtap='identifyDetail'>求专家鉴定</view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!--识别后 识别方式按钮  -->
+    <view wx:if="{{resultLest.length}}">
+      <view class='flexBox other-click'>
+        <view>
+          <!-- <view class='cat-phone' catchtap='discernPhoto'>拍照识花</view> -->
+          <view class='cat-phone' catchtap='sure'>确认是此花</view>
+        </view>
+        <view>
+          <navigator url='./share_map/share_map?mapUrl={{imgUrl}}&headerMap={{headerMap.url}}&name={{authorInfo.name}}&recognitionid={{recognitionId}}&recognitionName={{recognitionName}}'>
+            <view class='creat-img'>生成美图并分享</view>
+          </navigator>
+        </view>
+      </view>
+      <!-- <view class='from-album' catchtap='discernAlbum'>从相册上传 》</view> -->
+    </view>
+    <!--初始选择 识别方式按钮  -->
+    <view class='flexBox watch-click' wx:else>
+      <view>
+        <view class='cat-album' catchtap='discernAlbum'>从相册上传</view>
+      </view>
+      <view>
+        <view class='cat-phone' catchtap='discernPhoto'>拍照识花</view>
+      </view>
+    </view>
+  </view>
+</view>

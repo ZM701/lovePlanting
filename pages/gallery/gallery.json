@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "共建植物图库",
+  "usingComponents": {
+    "date-picker": "/components/date-picker/date-picker"
+  }
+}

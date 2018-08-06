@@ -1,0 +1,3 @@
+/* pages/identify/identify.wxss */
+@import "../template/footer/footer.wxss";
+

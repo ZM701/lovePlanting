@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "鉴别",
+  "usingComponents": {
+    "identify": "/components/identify/identify"
+  }
+}

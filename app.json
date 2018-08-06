@@ -1,0 +1,43 @@
+{
+  "pages": [  
+    "pages/nearby/nearby",
+    "pages/login/login",
+    "pages/gallery/gallery",
+    "pages/searchPlant/searchPlant",   
+    "pages/mine/mine",     
+    "pages/index/share_map/share_map",
+    "pages/index/index",   
+    "pages/find/find",
+    "pages/message/message",
+    "pages/findDetail/findDetail",
+    "pages/nearbyDetails/nearbyDetails",
+    "pages/goodFriends/goodFriends",
+    "pages/setUp/setUp",
+    "pages/generateFoot/generateFoot",
+    "pages/identifyDetail/identifyDetail",
+    "pages/identify/identify",
+    "pages/personIdentify/personIdentify",
+    "pages/personalPage/personalPage",
+    "pages/moreComment/moreComment",
+    "pages/articleDetail/articleDetail",
+    "pages/footprintDetail/footprintDetail",
+    "pages/interest/interest",
+    "pages/sign/sign",
+    "pages/findList/findList",
+    "pages/search/search",
+    "pages/personalInfo/personalInfo",
+    "pages/personalSign/personalSign",
+    "pages/aboutUs/aboutUs",
+    "pages/integral/integral",
+    
+    "pages/out/out",
+    "pages/out1/out1"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱植拍",
+    "navigationBarTextStyle": "black"
+  }
+}

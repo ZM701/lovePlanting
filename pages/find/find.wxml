@@ -1,0 +1,128 @@
+<!--pages/find/find.wxml-->
+<import src="../template/footer/footer.wxml"/>
+
+
+<view class="container">
+  <!-- tab导航栏 -->
+  <!-- scroll-left属性可以控制滚动条位置 -->
+  <!-- scroll-with-animation滚动添加动画过渡 -->
+  <scroll-view scroll-x="true" class="navs" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+    </block>
+  </scroll-view>
+  <!-- <include src="../../components/Refresh/refreshHeaderView.wxml" /> -->
+<scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight+50:-loadMoreHeight-100}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
+<view style="width:100%;height:100%" bindtouchmove="move">
+  <!-- 页面内容 -->
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+    <swiper-item class="tab-content">
+      <!-- 第一块内容 -->
+      <scroll-view scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltolower="bindDownLoad">
+      <!-- 1.轮播图 -->
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000">  
+        <block wx:for="{{movies}}" wx:for-index="index" wx:key="{{index}}">  
+          <swiper-item>  
+            <!-- <image src="{{item.url}}" class="slide-image" mode="aspectFill" bindtap='articleDetail'/>   -->
+            <image src="{{item.url}}" class="slide-image" mode="aspectFill" data-urlType='{{item.urlType}}' data-param='{{item.param}}' data-id='{{item.contentId}}' bindtap='loops'/>
+          </swiper-item>  
+        </block>  
+      </swiper>  
+      <!-- 2.足迹 -->
+       <!-- <view class='footprint'>
+        <view class='img'><text class='look'>999人浏览</text></view>
+        <view class='desc'>
+          <view>漫漫长路，记录足迹</view>
+          <view><image src="../../images/user.png"></image><text>用户昵称</text></view>
+        </view>
+      </view> -->
+      <!-- <view style='height:5px;background:#F5F8FA;margin:10px auto;'></view> -->
+      <view class='attention'><image src="../../images/foot.png" mode="apectFill"></image><text>推荐足迹</text></view>
+      <view class='footprint' wx:for="{{recommend}}" wx:key="this">
+        <view class='img' data-locationId="{{item.locationId}}" bindtap='footprintDetail'>
+          <image src="{{item.images[0]}}" mode="aspectFill"></image>
+          <text class='number' wx:if="{{item.images.length>1}}">{{item.images.length}}张</text>
+          <text class='look'>{{item.views}}人浏览</text>
+        </view>
+        <view class='desc'>
+          <view>{{item.name}}</view>
+          <view><image src="{{item.avatar}}"></image><text>{{item.nickname}}</text></view>
+        </view>
+      </view>
+
+      </scroll-view>
+
+    </swiper-item>
+    <swiper-item class="tab-content"> 
+      <!-- 第二块内容 -->
+      <scroll-view scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltolower="bindDownLoad">
+      <!-- 1.可能感兴趣的人 -->
+      <view class='nav'>
+        <view class='inster'>
+           <image wx:if="{{interestInfo.length>0}}" src="{{interestInfo[0].avatar}}"></image> 
+           <image wx:else src="../../images/user.png"></image> 
+          <text>可能感兴趣的人</text>
+          <text bindtap='loop'>查看详情></text>
+        </view>
+        <view class='userImg' bindtap='loop'>
+          <image wx:if="{{interestInfo.length>=2}}" src="{{interestInfo[1].avatar}}"></image>
+          <image wx:else src="../../images/user.png"></image>
+          <image wx:if="{{interestInfo.length>=3}}" src="{{interestInfo[2].avatar}}"></image>
+          <image wx:else src="../../images/user.png"></image>
+          <image wx:if="{{interestInfo.length>=4}}" src="{{interestInfo[3].avatar}}"></image>
+          <image wx:else src="../../images/user.png"></image>
+        </view>
+      </view>
+      <!-- <view style='height:5px;background:#F5F8FA;margin:10px auto;'></view> -->
+      <view class='attention'><image src="../../images/attention.png"></image><text>关注动态</text></view>
+      <!-- 2.足迹 -->
+      <!-- <view class='footprint'>
+        <view class='img'><text class='look'>999人浏览</text></view>
+        <view class='desc'>
+          <view>漫漫长路，记录足迹</view>
+          <view><image src="../../images/user.png"></image><text>用户昵称</text></view>
+        </view>
+      </view> -->
+      <!-- <view style='height:5px;background:#F5F8FA;margin:10px auto;'></view> -->
+      <!-- <view class='nones'>
+        <view><image src="../../images/p1.jpg" mode="aspectFill"></image></view>
+        <view>暂无动态</view>
+        <view>关注感兴趣的人  发现精彩足迹</view>
+      </view> --> 
+      <block wx:if="{{followed.length==0}}">
+        <view class='nones'>
+          <view><image src="../../images/p1.jpg" mode="aspectFill"></image></view>
+          <view>暂无动态</view>
+          <view>关注感兴趣的人  发现精彩足迹</view>
+        </view>
+      </block>
+
+      <block wx:else>
+        <view class='footprint' wx:for="{{followed}}" wx:key="this">
+          <view class='img' data-locationId="{{item.locationId}}"  bindtap='footprintDetail'>
+            <image src="{{item.images[0]}}" mode="aspectFill"></image>
+            <text class='number' wx:if="{{item.images.length>1}}"> {{item.images.length}}张</text>
+            <text class='look'>{{item.views}}人浏览</text>
+          </view>
+          <view class='desc'>
+            <view>{{item.content}}</view>
+            <view><image src="{{item.avatar}}"></image><text>{{item.nickname}}</text></view>
+          </view>
+        </view>
+      </block>
+      
+      </scroll-view>
+    </swiper-item>
+    
+  </swiper>
+</view>
+  </scroll-view>
+ 
+</view>
+
+
+
+
+
+
+ <template is="footer" data="{{array_pl,array_pl1,array_pl2,array_pl3}}"></template>  

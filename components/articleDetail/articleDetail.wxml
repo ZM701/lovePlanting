@@ -1,0 +1,89 @@
+<!--components/articleDetail/articleDetail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/> 
+
+<view>
+<!-- 头部区域 -->
+  <view class='nav'>
+    <view class='bg'><image src="{{articleInfo.image}}" mode="aspectFill"></image></view>
+    <!-- <view class='navback'><image src="../../images/back.png" catchtap='_back'></image><image src="../../images/share.png"></image></view> -->
+    <view class='userIcon'><image src="../../images/user.png"></image></view>
+  </view>
+
+  <!-- 主体区域 -->
+  <view class='userInfo'>
+    <text>[ 识别助手推荐 ]</text>
+    <view class='views'>{{articleInfo.views}}人浏览</view>
+  </view>
+  <view style='height:5px;background:#F5F8FA;margin:20px 0 10px 0;'></view>
+  <!-- 文章名称 -->
+  <view class='article'>
+  <view class='title'>{{articleInfo.title}}</view>
+  <view class='title'>{{articleInfo.subhead}}</view>
+     <template is="wxParse" data="{{wxParseData:article_contents.nodes}}"/>  
+   
+  
+
+    <!-- <view class='title'>文章名称</view>
+    <view class='content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</view>
+    <view class='title'>段落标题</view>
+    <view class='content'>段落标题段落标题段落标题段落标题段落标题段落标题段落标题</view> -->
+  </view>
+  <!-- <view style='height:5px;background:#F5F8FA;margin:20px 0 10px 0;'></view> -->
+
+  <!-- 热门回复 -->
+  <!-- <view class='hot'>
+    <view class='title'>热门回复</view>
+    <view class='recomment'>
+      <view class='user'><image src="../../images/user.png"></image></view>
+      <view class='info'>
+        <text class='nick'>昵称</text>
+        <text class='numbers'>36楼 02-28</text>
+        <text class='recontent'>评论内容评论内容评论内容</text>
+        <view class='replay'>
+          <view class="arrow-up"></view>
+          <view class='res'>
+            <view class='re'><text>昵称：</text><text>评论内容评论内容评论内容</text></view>
+            <!-- <view class='more'>更多N条评论 > </view> -->
+          <!-- </view>
+        </view>
+        <view class='thumbs'>
+          <view><image src='../../images/icon4.png'></image><text>35</text></view>
+          <view><image src='../../images/icon5.png'></image><text>35</text></view>
+        </view>
+      </view>
+    </view>
+  </view>  -->
+  <!-- 全部回复 -->
+  <!-- <view style='height:5px;background:#F5F8FA;margin:20px 0 10px 0;'></view>
+  <view class='hot'>
+    <view class='title'>全部回复</view>
+    <view class='recomment'>
+      <view class='user'><image src="../../images/user.png"></image></view>
+      <view class='info'>
+        <text class='nick'>昵称</text>
+        <text class='numbers'>36楼 02-28</text>
+        <text class='recontent'>评论内容评论内容评论内容</text>
+        <view class='replay'>
+          <view class="arrow-up"></view>
+          <view class='res'>
+            <view class='re'><text>昵称：</text><text>评论内容评论内容评论内容</text></view>
+            <view class='more' catchtap='_more'>更多N条评论 > </view>
+          </view>
+        </view>
+        <view class='thumbs'>
+          <view><image src='../../images/icon4.png'></image><text>顶</text></view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+
+  <!-- 简单说几句 -->
+  <!-- <view class='say'>
+    <view><input type='text' placeholder='简单说几句'></input></view>
+    <view>评论</view>
+  </view> -->
+    
+
+</view>
+

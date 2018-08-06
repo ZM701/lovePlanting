@@ -1,0 +1,3 @@
+<!--pages/articleDetail/articleDetail.wxml-->
+ <articleDetail bind:back="_back" bind:more="_more" bind:personalPage="_personalPage" articleInfo="{{articleInfo}}" article_contents="{{article_contents}}"></articleDetail> 
+

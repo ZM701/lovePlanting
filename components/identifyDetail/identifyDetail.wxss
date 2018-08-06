@@ -1,0 +1,196 @@
+/* components/identifyDetail/identifyDetail.wxss */
+.nav{
+  position: relative;
+  height: 134px;
+}
+.nav .bg{
+  position: absolute;
+  width: 100%;
+  height: 134px;
+  left: 0;
+  top:0;
+}
+.nav .bg image{
+  width: 100%;
+  height: 100%;
+}
+.nav .navback{
+  position: absolute;
+  height: 25px;
+  line-height: 25px;
+  width: 90%;
+  top:10px;
+  left: 50%;
+  margin-left: -45%;
+}
+.nav .navback image:first-of-type{
+  float: left;
+  width: 24px;
+  height: 24px;
+}
+.nav .navback image:last-of-type{
+  float: right;
+  width: 16px;
+  height: 17px;
+}
+.nav .userIcon{
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  margin-left: -25px;
+}
+.nav .userIcon image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.userInfo{
+  margin-top: 30px;
+}
+.userInfo view{
+  text-align: center;
+}
+.userInfo .user text:first-of-type{
+  margin: 30px 0 5px 0;
+  color: #303030;
+  font-size: 15px;
+  font-weight: bold;
+}
+.userInfo .user text:last-of-type{
+  font-size: 12px;
+  color: #949494;
+  margin-left: 5px;
+}
+.userInfo .location{
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.userInfo .location image{
+  width: 8px;
+  height: 12px;
+  margin-right: 5px;
+}
+.userInfo .location text{
+  font-size: 13px;
+  color: #949494;
+}
+.userInfo .res{
+  color: #303030;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.userInfo .nick text{
+  border:1px solid #a9e29a;
+  font-size: 12px;
+  color: #303030;
+  padding: 5px;
+  margin: 0 5px;
+}
+.hot{
+  padding: 10px;
+}
+.hot .title{
+  font-size: 12px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.hot .recomment{
+  overflow: hidden;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #E7E7E7;
+}
+.hot .recomment .user image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.hot .recomment .info{
+  width: 84%;
+  margin-left: 5px;
+}
+.hot .recomment .user,.hot .recomment .info{
+  float: left;
+}
+.hot .recomment .info .relative{
+  overflow: hidden
+}
+.hot .recomment .info .nick{
+  display: block;
+  color: #60bc48;
+  font-size: 14px;
+  margin-bottom: 4px;
+  float: left;
+}
+.hot .recomment .info .thumbs{
+  float: right;
+}
+.hot .recomment .info .thumbs image{
+  width: 14px;
+  height: 14px;
+}
+.hot .recomment .info .thumbs text{
+  font-size: 14px;
+  margin-left: 4px;
+  color: #999;
+}
+.hot .recomment .info .numbers{
+  display: block;
+  color: #999;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+.hot .recomment .info .recontent{
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #999;
+}
+
+.say{
+  position: fixed;
+  width:100%;
+  background: #fff;
+  bottom: 0px;
+  overflow: hidden;
+  padding: 10px 20px;
+  /* border-top: 1px solid #f8f8f8; */
+}
+.say>view{
+  float: left;
+}
+.say>view:first-of-type{
+  width: 80%
+}
+.say>view:first-of-type input{
+  widows: 100%;
+  height: 35px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.say>view:last-of-type{
+  line-height: 35px;
+  margin-left: 2%;
+  color: #999;
+  font-size: 14px;
+}
+.soft{
+  width: 100%;
+  margin: 10px auto;
+}
+.soft image{
+  display: block;
+  margin: 10px auto;
+  width: 48px;
+  height: 36px;
+
+}
+.soft text{
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #ccc;
+}

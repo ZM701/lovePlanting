@@ -1,0 +1,125 @@
+/* pages/message/message.wxss */
+.page{
+    width: 100%;
+    height: 100%; 
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+.nav {
+    height: 80rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #f7f7f7;
+    font-size: 32rpx;
+    white-space: nowrap;
+    position: fixed;
+    left: 0;
+    z-index: 99;
+}
+.nav-item {
+    width: 33.33%;
+    display: inline-block;
+    text-align: center;
+}
+.nav-item.active{
+    height: 78rpx;
+    border-bottom:2px solid #C4EBB9;
+    color: #C4EBB9;
+}
+.tab-box{
+    padding-top: 0rpx;
+    height: 100%;
+    box-sizing: border-box;
+}
+.tab-content{
+    overflow-y: scroll;
+}
+/* 去掉滚动条 */
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+/* 动态 */
+.dynamic{
+  padding: 8px 8px 0px 8px;
+  overflow: hidden;
+  border-bottom:1px solid #E2E2E2;
+}
+.dynamic>view{
+  float: left;
+}
+.dynamic>view:last-of-type{
+  width: 68%;
+  margin-left: 10px;
+  font-size: 14px;
+  text-align: left;
+}
+.dynamic>view:first-of-type image{
+  width: 85px;
+  height: 65px;
+}
+.dynamic>view:last-of-type>text{
+  display: block;
+}
+.dynamic .title{
+  font-size: 14px;
+}
+.dynamic .user{
+  margin-top: 10px;
+}
+.dynamic .user image{
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.dynamic .user text{
+  color: #666;
+  font-size: 11px;
+}
+.dynamic .time{
+  text-align: right;
+  font-size: 10px;
+  color: #999;
+}
+/* 私信 */
+.privateLetter,.notice{
+  padding: 8px 8px 0px 8px;
+  overflow: hidden;
+  border-bottom:1px solid #E2E2E2;
+}
+.privateLetter>view{
+  float: left;
+}
+.privateLetter>view:first-of-type image{
+  width: 40px;
+  height: 40px;
+  margin-right: 6px;
+}
+.privateLetter>view:last-of-type{
+   width: 83%; 
+}
+.privateLetter .user,.notice .user{
+  font-size: 14px;
+  overflow: hidden;
+}
+.privateLetter .user text:first-of-type,.notice .user text:first-of-type{
+  float: left;
+}
+.privateLetter .user text:last-of-type,.notice .user text:last-of-type{
+  float: right;
+  color: #999;
+  font-size: 10px;
+}
+.privateLetter .desc,.notice .desc{
+  font-size: 14px;
+  color: #999;
+  margin-top: 8px;
+  text-align: left;
+  margin-bottom: 6px;
+}

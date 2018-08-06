@@ -1,0 +1,148 @@
+/* pages/findDetail/findDetail.wxss */
+page{
+  background: #F7F6F6;
+}
+.identify{
+  width: 100%;
+  padding: 10px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+.identify .res{
+  width: 46%;
+  float: left;
+  background: #fff;
+  margin-right: 8px;
+  border-radius: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  height: 210px;
+  overflow: hidden;
+}
+/* .identify .res:nth-of-type(2n){
+  margin-right: 0px;
+} */
+.identify .res .imgs{
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+.identify .res .imgs image{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.identify .res .views{
+  position: absolute;
+  right: 5px;
+  top:5px;
+  color: #fff;
+  font-size: 12px;
+  padding-left: 15px;
+}
+.identify .res .views image{
+  width: 13px;
+  height: 9px;
+  vertical-align: middle;
+  margin-right: 2px;
+  margin-top: 4px;
+}
+
+.identify .res .location{
+  position: absolute;
+  width: 98%;
+  height: 20px;
+  color: #fff;
+  left: 4px;
+  bottom: 5px;
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-left: 12px;
+  line-height: 20px;
+}
+.identify .res .imgs .location .map{
+  width: 9px;
+  height: 12px;
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-top: 5px;
+}
+.identify .res .user{
+  overflow: hidden;
+  padding-left: 5px;
+}
+.identify .res .user .userImage{
+  margin-right: 5px;
+  padding-top: 8px;
+}
+.identify .res .user .userImage,.identify .res .user .nick{
+  float: left; 
+}
+.identify .res .user .nick{
+  margin-top: 10px;
+}
+.identify .res .user .userImage image{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.identify .nick image{
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+  display: block;
+  float: left;
+  margin-top: 4px;
+}
+.identify .nick text{
+  display: block;
+  float: left;
+  font-size: 11px;
+  color: #4b4b4b;
+  width: 90px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* .identify .nick view.ide{
+  width: 50px;
+  text-align: center;
+  padding:2px 5px;
+  border-radius: 10px;
+  color: #5b5b5b;
+  font-size: 11px;
+  background: #eee;
+  margin-top:5px;
+}  */
+
+.none{
+  margin: 100px auto;
+  text-align: center;
+}
+.none .n1{
+  width: 100px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin: 0 auto;
+}
+.none .n2{
+  text-align: center;
+  font-size: 13px;
+  margin: 20px 0;
+}
+.none .n3{
+  display: inline-block;
+  padding: 4px 15px;
+  border-radius: 8px;
+  color: #A9E29A;
+  font-size: 14px;
+  border:1px solid #A9E29A;
+  margin: 0 auto;
+}

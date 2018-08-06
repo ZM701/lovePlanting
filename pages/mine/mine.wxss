@@ -1,0 +1,351 @@
+/* pages/mine/mine.wxss */
+@import "../template/footer/footer.wxss";
+page{
+  height: 100%; 
+}
+.nav{
+  position: relative;
+  height: 130px;
+}
+.nav .bg{
+  position: absolute;
+  width: 100%;
+  height: 130px;
+  left: 0;
+  top:0;
+}
+.nav .bg image{
+  width: 100%;
+  height: 100%;
+}
+.nav .navback{
+  position: absolute;
+  height: 25px;
+  line-height: 25px;
+  width: 90%;
+  top:10px;
+  left: 50%;
+  margin-left: -45%;
+}
+.nav .navback image{
+  float: right;
+  width: 25px;
+  height: 25px;
+}
+.nav .userInfo{
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  margin-left: -45%;
+  bottom: 10px;
+  overflow: hidden;
+  color:#fff;
+}
+.nav .userInfo .box1,.nav .userInfo .box2{
+  float: left;
+}
+.nav .userInfo .box2{
+  width: 50%;
+  margin-left: 5px;
+  font-size: 14px;
+}
+.nav .userInfo .box1 image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.nav .userInfo .box2 view:first-of-type image{
+  width: 18px;
+  height: 15px;
+  margin: 0 5px 0 10px;
+}
+.nav .userInfo .box2 view:first-of-type text.attention{
+  display: inline-block;
+  font-size: 12px;
+}
+.nav .userInfo .box2 view:first-of-type{
+  margin: 2px 0;
+}
+.nav .userInfo .box2 view:last-of-type{
+  font-size: 12px;
+}
+.notice{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+.notice>view{
+  width: 100%;
+}
+.notice view{
+  text-align: center;
+}
+.notice>view view:first-of-type{
+  color: #666;
+  font-size: 14px;
+}
+.notice>view view:last-of-type{
+  color: #222;
+  font-size: 14px;
+}
+/* 左右滑动 */
+
+.container{
+  width: 100%;
+  position: relative;
+  margin-bottom: 70px; 
+}  
+/* 第二次 */
+ .containers{
+  width: 100%;
+  position: absolute;
+  top:0;
+  bottom: 0px;
+  border:1px solid #000;
+  background: #fff;
+}  
+.navs {
+    height: 110rpx;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; 
+    line-height: 50rpx;
+    font-size: 32rpx;
+    white-space: nowrap;
+    z-index: 99;
+}
+.navNum{
+  position: absolute;
+  z-index: -99; 
+  width: 100%;
+  top:20px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+}
+/* 第二次 */
+ .navNums{
+  background: #fff;
+  position: fixed;
+  left:0;
+  z-index: 99;
+  width: 100%;
+  top:20px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+} 
+.navNum>view{
+  text-align: center;
+  width: 100%;
+}
+/* 第二次 */
+ .navTabs{
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 99; 
+} 
+ .nav-item {
+    width: 50%;
+    height: 40px;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+} 
+.nav-item.active{ 
+  border-bottom:2px solid #C4EBB9;
+  color: #C4EBB9;
+}
+.actives{ 
+  color: #C4EBB9;
+}
+
+/* 识别历史为无 */
+.none{
+  width: 115px;
+  height: 115px;
+  margin: 10px auto;
+  text-align: center;
+  position: relative;
+}
+.none image{
+  width: 115px;
+  height: 115px;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.none text{
+  display: block;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  width: 164px;
+  height: 33px;
+  background: #A9E29A;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  margin-left: -82px;
+  line-height: 33px;
+  border-radius: 20px;
+}
+.nones text{
+  display: block;
+  width: 140px;
+  height: 38px;
+  background: #A9E29A;
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  margin: 15px auto;
+  line-height: 38px;
+  border-radius: 20px;
+}
+/* 识别有内容的样式 */
+.main{
+  margin-bottom: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+.total{
+  overflow: hidden;
+  padding-left: 5px;
+}
+.total .time,.total .box{
+  float: left;
+  overflow: hidden;
+}
+.total .time text{
+  display: block;
+}
+.total .time text:first-of-type{
+  font-size: 14px;
+  color: #565656;
+}
+.total .time text:last-of-type{
+  font-size: 10px;
+  color: #9d9d9d;
+}
+.total .box{
+  width: 92%;
+}
+.total .box .dot{
+  width: 10px;
+  height: 10px;
+  background: #dfdfdf;
+  border-radius: 50%;
+  margin: 5px 0;
+}
+.total .box .timeLine{
+ width: 98%;
+ border-left: 1px solid #dfdfdf; 
+ padding: 5px 0px 5px 10px; 
+ margin-left: 5px; 
+}
+.footprint{
+  width: 100%;
+}
+.footprint .img{
+  width: 100%;
+  height: 197px;
+  background: #E5E5E5;
+  margin-bottom: 9px;
+  position: relative;
+}
+.footprint .img .bg{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+}
+.footprint .img .bg image{
+  width: 100%;
+  height: 100%;
+}
+.footprint .img view.number{
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  overflow: hidden;
+}
+.footprint .img view.number image{
+  display: block;
+  float: left;
+  width:13px; 
+  height: 9px;
+  margin-right: 2px;
+  margin-top: 4px;
+}
+.footprint .img view.number text{
+  display: block;
+  float: left;
+  font-size: 11px;
+  color: #fff;
+}
+.footprint .img view.number text.ns{
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.footprint .img .look{
+  position: absolute;
+  left: 5px;
+  bottom: 7px;
+  font-size: 12px;
+  color: #fff;
+}
+.footprint .img view.looks{
+  text-align: right;
+  right: 15px;  
+}
+.footprint .desc .print view:first-of-type{
+  text-align: left;
+  font-size: 13px;
+  color: #8f8f8f;
+  margin-bottom: 8px;
+}
+.footprint .desc .print view:first-of-type image{
+  width: 9px;
+  height: 12px;
+  vertical-align: middle;
+  margin-right: 2px;
+}
+.footprint .desc .print view:last-of-type{
+  text-align: left;
+  color: #8f8f8f;
+  font-size: 11px;
+}
+.footprint .desc {
+  overflow: hidden;
+}
+.footprint .desc .print {
+  float: left;
+  height: 20px;
+  line-height: 22px;
+}
+.footprint .desc .thums{
+  float: right;
+  margin-right: 0px;
+}
+.footprint .desc .thums image{
+  width: 12px;
+  height: 11px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+.footprint .desc .thums text{
+  display: inline-block;
+  font-size: 11px;
+  color: #8f8f8f;
+  padding-left: 4px;
+  padding-right: 6px;
+  margin-right: 6px;
+}
+.footprint .desc .thums text:first-of-type{ 
+  border-right: 1px solid #8f8f8f;
+}
+

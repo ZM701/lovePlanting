@@ -1,0 +1,84 @@
+<!--pages/setUp/setUp.wxml-->
+<view class="installList">
+   <view class="item" bindtap='personalInfo'>
+      <view>
+          <image src="../../images/install/1.png" style='width: 38rpx; height: 33rpx;'></image>
+          <view class="name">修改个人信息</view>
+      </view>
+      <view class="jump">      
+         <image src="../../images/install/i.png"></image>
+      </view>   
+   </view>
+   <!-- <view class="item">
+      <view>
+          <image src="../../images/install/2.png" style='width: 35rpx; height: 34rpx;'></image>
+          <view class="name">意见反馈</view>
+      </view>
+      <view class="jump">      
+         <image src="../../images/install/i.png"></image>
+      </view>   
+   </view> -->
+   <view class="item" bindtap='cleaning'>
+      <view>
+          <image src="../../images/install/3.png" style='width: 30rpx; height: 34rpx;'></image>
+          <view class="name">清除缓存</view>
+      </view>
+      <view class="jump">
+         <!-- <view class="word">缓存12.6MB</view>       -->
+         <image src="../../images/install/i.png"></image>
+      </view>   
+   </view>
+   <view class="item" bindtap='aboutUs'>
+      <view>
+          <image src="../../images/install/4.png" style='width: 35rpx; height: 33rpx;'></image>
+          <view class="name">关于我们</view>
+      </view>
+      <view class="jump">      
+         <image src="../../images/install/i.png"></image>
+      </view>   
+   </view>
+   <view class="item">
+      <view>
+          <image src="../../images/install/5.png" style='width: 33rpx; height: 33rpx;'></image>
+          <view class="name">当前版本</view>
+      </view>
+      <view class="jump">      
+         <view class="word">V1.0.0</view>
+      </view>   
+   </view>
+</view>
+
+<view class="installList">
+   <view class="item" bindtap='gallery'>
+      <view>
+          <image src="../../images/install/8.png" style='width: 32rpx; height: 34rpx;'></image>
+          <view class="name">共建植物图库</view>
+      </view>
+      <view class="jump">      
+        <image src="../../images/install/i.png"></image>
+      </view>   
+   </view>
+   <!-- <view class="item" bindtap='integral'>
+      <view>
+          <image src="../../images/install/6.png" style='width: 32rpx; height: 34rpx;'></image>
+          <view class="name">积分规则</view>
+      </view>
+      <view class="jump">      
+         <image src="../../images/install/i.png"></image>
+      </view>   
+   </view> -->
+   <view class="item" bindtap='remark'>
+      <view>
+          <image src="../../images/install/7.png" style='width: 32rpx; height: 32rpx;'></image>
+          <view class="name">给爱植拍评分</view>
+      </view>
+      <view class="jump">      
+         <image src="../../images/install/i.png"></image>
+      </view>   
+   </view>
+
+</view>
+
+ <!-- <button class="keep" bindtap="primary">立即登录</button>  -->
+<!-- <button class="keep" bindtap="primary">退出登录</button> -->
+

@@ -1,0 +1,86 @@
+<!--pages/integral/integral.wxml-->
+<view class="integral">
+    <view class="add">
+        <view class="title">
+          1、如何获取积分？
+        </view>
+        <view class="content">
+           <view class="top">
+               <view class="one">操作行为</view>
+               <view class="two">积分奖励</view>
+               <view class="three">说明</view>           
+           </view>
+           <view class="">
+               <view class="one">每日登陆签到</view>
+               <view class="two">1分/次</view>
+               <view class="three">每日上限1次</view>           
+           </view>
+           <view class="">
+               <view class="one">绑定账号</view>
+               <view class="two">10分/次</view>
+               <view class="three">一次性得分</view>           
+           </view>
+           <view class="">
+               <view class="one">完善个人信息</view>
+               <view class="two">20分/次</view>
+               <view class="three">一次性得分</view>           
+           </view>
+           <view class="">
+               <view class="one">发表足迹</view>
+               <view class="two">5分/次</view>
+               <view class="three">每日上限5次</view>           
+           </view>
+           <view class="">
+               <view class="one">发表评论</view>
+               <view class="two">1分/次</view>
+               <view class="three">每日上限20次</view>           
+           </view>
+           <view class="">
+               <view class="one">正确鉴别评论</view>
+               <view class="two">5分/次</view>
+               <view class="three">每日上限20次</view>           
+           </view>
+           <view class="">
+               <view class="one">分享</view>
+               <view class="two">3分/次</view>
+               <view class="three">每日上限20次</view>           
+           </view>
+        </view>
+    
+    </view>
+
+    <view class="user">
+        <view class="title">
+          1、积分有什么用？
+        </view>
+        <view class="content">
+           <view class="top">
+               <view class="">操作行为</view>
+               <view class="">积分消耗</view>         
+           </view>
+           <view class="">
+               <view class="">修改头像、昵称</view>
+               <view class="">1分/次</view>         
+           </view>
+           <view class="">
+               <view class="">修改背景图片</view>
+               <view class="">3分/次</view>         
+           </view>
+           <view class="">
+               <view class="">生成美图</view>
+               <view class="">3分/次</view>         
+           </view>
+           <view class="">
+               <view class="">请专家鉴定图片</view>
+               <view class="">5分/次</view>         
+           </view>
+           <view class="">
+               <view class="">首次发私信</view>
+               <view class="">5分/次</view>         
+           </view>
+        </view>
+    
+    </view>
+
+
+</view>

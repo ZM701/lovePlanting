@@ -1,0 +1,53 @@
+/* pages/setUp/setUp.wxss */
+page{ background: #f0f0f0;}
+.installList{ margin-top: 14rpx; border-top: 1px solid #e7e7e7;background: #fff;}
+.installList .item:last-child{
+  border: none;
+}
+.item{
+  display: flex;
+  padding:24rpx;
+  flex-direction: row;
+  justify-content: space-between;  
+  position: relative;
+  border-bottom: 1px solid #e5e5e5;
+  margin-left: 24rpx;  
+}
+.item>view {
+  display: flex;
+}
+
+.item>view:first-child image{
+  display: block;
+  margin-top: 10rpx;
+}
+.item .name{
+  font-size: 28rpx;
+  color: #252525;
+  margin-left: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.jump image{
+  width: 12rpx;
+  height: 20rpx;
+  margin: 15rpx 0;
+}
+.jump .word{
+  font-size: 26rpx;
+  color: #949494;
+  margin-right: 10rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+
+.keep{
+  width: 90%;
+  margin-top: 70rpx;
+  background: #a9e29a !important;
+  color: #fff;
+  position: fixed;
+  bottom: 30rpx;
+  left: 5%;
+}

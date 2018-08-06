@@ -1,0 +1,160 @@
+<!--pages/mine/mine.wxml-->
+
+
+<import src="../template/footer/footer.wxml"/>
+
+<view>  
+<!-- 头部区域 -->
+    <view class='nav' wx:if="{{scrollTop<=0}}">
+    <view class='bg'><image src="{{members.background}}" mode="aspectFill"></image></view>
+    <view class='navback'><image src="../../images/icon8.png" bindtap='setUp'></image></view>
+    <view class='userInfo'>
+      <view class='box1'><image src='{{members.avatar}}'></image></view>
+      <view class='box2'>
+        <view>
+          <text>{{members.nickname}}</text>
+          <!-- <image src='../../images/icon7.png'></image>
+          <text class='attention'>13积分</text> -->
+        </view>
+        <view>{{members.bio || signName}}</view> 
+      </view>
+    </view>
+  </view>  
+
+  <!-- 消息 好友  关注 粉丝 -->
+  <view class='notice' wx:if="{{scrollTop<=0}}">
+    <view bindtap='message'> <view>0</view><view>消息</view> </view>
+    <view bindtap='goodFriends' data-activeIndex="0"> <view>{{members.friendsNum}}</view><view>好友</view> </view>
+    <view bindtap='goodFriends' data-activeIndex="1"> <view>{{members.followingNum}}</view><view>关注</view> </view>
+    <view bindtap='goodFriends' data-activeIndex="2"> <view>{{members.followersNum}}</view><view>粉丝</view> </view>
+  </view>
+  <view style='height:5px;background:#F5F8FA;margin:0px 0 10px 0;'></view> 
+
+ 
+
+
+</view>  
+
+<view class='container'>
+     <view class="{{scrollTop>0?'navTabs':''}}"> 
+    <!-- <view> -->
+      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">        
+          <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">
+            <view>{{navItem.text}}</view>
+          </view>       
+      </block>
+    </view>
+     <view class="navNum {{scrollTop>0?'navNums':'navNum'}}"> 
+    <!-- <view class="navNum"> -->
+      <view class="{{currentTab == 0 ?'actives':''}}" data-current="0" bindtap="switchNav">{{historyLength}}</view>
+      <view class="{{currentTab == 1 ?'actives':''}}" data-current="1" bindtap="switchNav">{{footLength}}</view>
+    </view>
+
+
+
+      <view class="tab-content" wx:if="{{currentTab==0}}">
+      <scroll-view scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+      <!-- 识别历史 -->
+        <!-- 没有时候的显示 -->
+        <view class='none' wx:if="{{history.length==0}}">
+          <image src="../../images/img6.png"></image>
+          <text bindtap='takePhoto'>点击拍照识别</text>
+        </view>   
+      <!-- 时间线 -->
+      <view class='main'>
+        <view class='total' wx:for="{{history}}" wx:key="this">
+          <view class='time'><text>{{item.day}}</text><text>{{item.month}}月</text></view>
+          <view class='box'>
+            <view class='dot'></view>
+            <view class='timeLine'>
+              <view class='footprint'>
+                <view class='img' data-posted='{{item.posted}}' data-status="{{item.status}}" data-recognitionId="{{item.recognitionId}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-month="{{item.month}}" data-season="{{item.season}}" data-identificationId="{{item.identificationId}}" data-imgUrl="{{item.image}}" data-name="{{item.name}}" bindtap='historyDetail'>
+                  <view class='bg'><image src='{{item.image}}' mode="aspectFill"></image></view>
+                   <view class='number'>
+                    <image wx:if="{{item.posted==true}}" src="../../images/icon11.png"></image>
+                    <text wx:if="{{item.posted==false}}">仅自己可见</text>
+                    <text wx:if="{{item.posted==true}}">{{item.views}}人浏览</text>
+                   </view> 
+                  <view class='look'>
+                  <!-- 非植物只显示未鉴别；植物识别结束没有进行任何操作，这里显示识别结果中第一个植物的名称；求高手鉴别，这里显示求鉴别 -->
+                  <view wx:if="{{item.posted==false}}">
+                    <text wx:if="{{item.name=='非植物'}}">未鉴别</text><text wx:else>{{item.name}}</text>
+                  </view>
+                  <view else>
+                    <text wx:if="{{item.status==2}}">求鉴别</text>
+                  </view>
+                    <!-- <view wx:if="{{item.name!=''}}"><text wx:if="{{item.name=='非植物'}}">未鉴别</text><text wx:else>{{item.name}}</text></view> -->
+                    <!-- 状态（0未鉴定，1已鉴定，2求鉴定） -->
+                    <!-- <view wx:else><text wx:if="{{item.status==0}}">未鉴别</text><text wx:if="{{item.status==2}}">求鉴别</text></view> -->
+                  </view>
+                </view>
+                <view class='desc'>
+                  <view class='print'>
+                    <view><image src="../../images/icon1.png"></image><text>{{item.location}}</text></view>
+                  </view>
+                  <view class='thums'>
+                    <image src='../../images/icon9.png'></image>
+                    <text>分享</text>
+                    <image src='../../images/icon10.png'></image>
+                    <text data-recognitionId="{{item.recognitionId}}" data-index="{{index}}" bindtap='delHistory'>删除</text>
+                  </view>
+                </view>
+              </view> 
+            </view>
+          </view>
+        </view>
+      </view>
+      </scroll-view>
+      </view>
+
+
+       
+      <view class="tab-content" wx:if="{{currentTab==1}}">
+      <scroll-view scroll-y="true" style="height:{{windowHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll="scroll">
+        <!-- 记录足迹（已有足迹）： -->
+       <view>
+        <view class='nones' wx:if="{{foot.length>0}}">
+          <text bindtap='generateFoot'>+ 添加足迹</text>
+        </view> 
+        <view class='main mains'>
+          <view class='total' wx:for="{{foot}}" wx:key="this">
+            <view class='time'><text>{{item.day}}</text><text>{{item.month}}月</text></view>
+            <view class='box'>
+              <view class='dot'></view>
+              <view class='timeLine'>
+                <view class='footprint'>
+                  <view class='img' data-locationId="{{item.locationId}}" bindtap='footprintDetail'>
+                    <view class='bg'><image src='{{item.images[0]}}' mode="aspectFill"></image></view>
+                    <view class='number'><text class='ns'>{{item.images.length}}张</text></view> 
+                    <view class='look looks'>{{item.views}}人觉得很赞</view>
+                  </view>
+                  <view class='desc'>
+                    <view class='print'>
+                      <view>{{item.name}}</view>
+                    </view>
+                    <view class='thums'>
+                      <image src='../../images/icon9.png'></image>
+                      <text>分享</text>
+                      <image src='../../images/icon10.png'></image>
+                      <text data-locationId="{{item.locationId}}" data-index="{{index}}" bindtap='delFoot'>删除</text>
+                    </view>
+                  </view>
+                </view> 
+              </view>
+            </view>
+          </view> 
+        </view>
+      </view>  
+      <!-- 记录足迹（没有足迹）： -->
+      <view wx:if="{{foot.length==0}}">
+        <view class='none'>
+          <image src="../../images/img6.png"></image>
+          <text bindtap='generateFoot'>立即生产我的足迹</text>
+        </view>  
+      </view>
+      </scroll-view>  
+    </view>
+</view>
+ <view style='height:10px;'></view> 
+ <template is="footer" data="{{array_pl,array_pl1,array_pl2,array_pl3}}"></template>  
+

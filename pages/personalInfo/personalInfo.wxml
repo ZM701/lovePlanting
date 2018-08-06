@@ -1,0 +1,53 @@
+<!--pages/personalInfo/personalInfo.wxml-->
+<form>
+
+  <view class="installList">
+    <view class="item">
+        <view>头像</view>
+        <view class="">
+          <image src="{{members.avatar}}" style='width: 75rpx; height: 75rpx; border-radius:50%;'></image>     
+          
+        </view>   
+    </view>
+    <view class="item" bindtap='takePhoto'>
+        <view>背景图片</view>
+        <view class="">
+          <image src="{{bg}}" style='width: 123rpx; height: 62rpx;margin-top:8rpx;'></image>      
+          <image class="jump" src="../../images/install/i.png"></image>
+        </view>   
+    </view>
+    <view class="item" data-type="1">
+        <view>昵称</view>
+        <view>
+          <view class="word">{{members.nickname}}</view>      
+        </view>   
+    </view>
+    <view class="item" data-type='2' data-content="{{members.bio || signName}}" data-img="{{bg}}" bindtap='personalSign'>
+        <view>个性签名</view>
+        <view>
+          <view class="word">{{members.bio || signName}}</view>      
+          <image class="jump" src="../../images/install/i.png"></image>
+        </view>   
+    </view>
+    <!-- <view class="item">
+        <view>手机</view>
+        <view>
+          <view class="word">123xxxx2236</view>      
+          <image class="jump" src="../../images/install/i.png"></image>
+        </view>   
+    </view>  -->
+    <!-- <view class="item">
+        <view>邮箱</view>
+        <view>
+          <view class="word">未绑定</view>      
+          <image class="jump" src="../../images/install/i.png"></image>
+        </view>   
+    </view> -->
+
+  </view>
+
+  <!-- <button class="keep" bindtap="primary">保存</button> -->
+
+</form>
+
+

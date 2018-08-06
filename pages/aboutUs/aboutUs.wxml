@@ -1,0 +1,23 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view class="about">
+  <image class="bg" bindload='imageLoad'  mode="scaleToFill" src="../../images/install/bg.png"></image>
+  <view class="aboutUs">
+    <view class="logo">
+       <image src="../../images/login/logo.png"></image>
+    </view>
+    <view class="num">版本号：V1.0.0</view>
+    <view class="word">拓展植识面   缘来遇见ta</view>
+    <view class="info">
+       <view class="contact"> 
+          <view>AI 植拍</view>
+          <view class='contents'> 爱植拍-----AI智能识别植物的神器；爱植拍内部包含近6万种植物词库，光中国境内植物就包含3万多种，几乎覆盖身边所有常见的花草树木。不认识植物，一拍快速识别呈现植物相关信息。</view>
+          <view class='contents'> 对植物进行拍照识别并自动记录，发表足迹分享此刻心情，让更多人看到你，遇见植识圈的知音。可与知音好友私信沟通，随时查看好友动态。同步通讯录，发现你身边的植物爱好者。</view>
+        </view>
+        <view class="advice">
+          <view>意见反馈与建议</view>
+          <view>邮箱：ai@nanniwan.com</view>
+        </view>
+    </view>
+  </view>
+
+</view>

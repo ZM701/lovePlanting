@@ -1,0 +1,52 @@
+/**app.wxss**/
+
+/*引入字体图标样式  */
+@import "/fonts/iconfont.wxss";
+@import "/fonts/stylesheet.wxss";
+/*弹性盒子*/
+
+.flexBox {
+  display: flex;
+}
+
+.flexDireCol {
+  flex-direction: column;
+}
+
+.flexDireRow {
+  flex-direction: row;
+}
+
+.justifyCen {
+  justify-content: center;
+}
+
+.flexAlignSpa {
+  justify-content: space-between;
+  -webkit-box-align: space-between;
+  align-items: space-between;
+  -webkit-box-pack: space-between;
+}
+
+.flexAlignCen {
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+}
+
+/* 清除浮动 */
+
+.clean:before {
+  display: table;
+  content: '';
+}
+
+.clean:after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+
+ 

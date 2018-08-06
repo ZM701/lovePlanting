@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "植拍",
+  "usingComponents": {
+    "nearbyDetails": "/components/nearbyDetails/nearbyDetails"
+  }
+}

@@ -1,0 +1,27 @@
+<!--pages/gallery/gallery.wxml-->
+<form bindsubmit="formSubmit" id='2' bindreset="formReset">  
+  <view class="installList" bindtap='integral'>
+    <view class="item">
+        <view>植物名： <input bindtap="searchPlant" value='{{keyWords}}'/></view>
+    </view>
+    <view class="item">
+        <view bindtap="showDatePicker">拍摄时间：{{date}}</view>
+    </view>
+  </view>
+  <date-picker
+  id="date-picker"
+  value="{{datePickerValue}}" 
+  isShow="{{datePickerIsShow}}"
+  bindsureclick="datePickerOnSureClick"
+  bindcancelclick="datePickerOnCancelClick" /> 
+  <view class="big-logos">  
+    <view bindtap="upimg" class='logoinfo1'><image src='../../images/jia.png'></image></view>
+    <block wx:for="{{img_arr}}">  
+      <view class='logoinfo' data-index="{{index}}">  
+        <image src='{{item}}' mode='aspectFill'></image> 
+        <icon type="clear"  data-index="{{index}}" bindtap="del" size="18"/> 
+      </view>  
+    </block>  
+  </view>  
+  <button class='btn' formType="submit">上 传</button>  
+</form> 

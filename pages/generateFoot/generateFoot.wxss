@@ -1,0 +1,143 @@
+/* pages/generateFoot/generateFoot.wxss */
+page{
+  background: #F0F0F0;
+}
+.total{
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+.box{
+  width: 48.3%;
+  float: left;
+  margin-right: 10px;
+  background: #fff;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+.box:nth-of-type(2n){
+  margin-right: 0;
+}
+.box .one{
+  position: relative;
+  height: 150px;
+}
+.box .one image{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.box .one .choose{
+  position: absolute;
+  right: 0;
+  top:5px;
+}
+.box .one .name{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+}
+.box .one .cover{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+  background: rgba(0, 0, 0, 0.5)
+}
+.box .two{
+  color: #666;
+  font-size: 11px;
+  padding-left: 10px;
+  margin: 5px 0;
+}
+.box .three{
+  color: #999;
+  font-size: 10px;
+  padding-left: 10px;
+}
+.btns{
+  width: 100%;
+  background: #F0F0F0;
+  height: 60px;
+  position: fixed;
+  bottom: 0px;
+}
+.btn{
+  position: fixed;
+  bottom: 10px;
+  width: 94%;
+  height: 40px;
+  left: 50%;
+  margin-left: -47%;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  background: #A9E29A;
+  text-align: center;
+  letter-spacing: 2px;
+}
+form{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+  overflow-y: hidden;
+}
+.layer1{
+  overflow: hidden;
+  padding: 10px;
+  background: #F6F6F6;
+  font-size: 13px;
+  color: #666;
+}
+.layer1 text:first-of-type{
+  float: left;
+} 
+.layer1 text:last-of-type{
+  float: right;
+}
+.layer2{
+  padding: 14px 10px;
+  border-bottom: 1px solid #EBEBEB;
+  font-size: 14px;
+}
+.layer3{
+  padding: 14px 10px;
+  border-bottom: 1px solid #EBEBEB;
+  font-size: 14px;
+}
+.layer3 text{
+  display: block;
+  text-align: right;
+  font-size: 14px;
+  color: #808080;
+}
+.none{
+  margin: 50px auto;
+  text-align: center;
+}
+.covers{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+

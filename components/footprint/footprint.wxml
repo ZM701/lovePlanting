@@ -1,0 +1,33 @@
+<!--components/footprint/footprint.wxml-->
+<!-- <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 135px;"></map>  -->
+
+
+<view class='info'>
+  <view class='name'> <image src='../../images/footname.png'></image><text>{{locationsInfo.name}}</text><image src='../../images/footname.png'></image> </view>
+  <view class='user'> 
+    <image src='{{locationsInfo.avatar}}'></image> <text>{{locationsInfo.nickname}}</text>
+    <view wx:if="{{page!=1}}" class='rest'>
+      <text class='attention' wx:if="{{locationsInfo.follow_status==0}}" catchtap='_attention'>+ 关注</text>
+      <view class='res' wx:if="{{locationsInfo.follow_status==1}}" catchtap='_cancleAttention'><image src="../../images/icon6.png"></image>已关注</view> 
+    </view>  
+  </view>
+  <view class='mood'>{{locationsInfo.content}}</view>
+  <view class='thumbs'>{{locationsInfo.likes}}人觉得很赞</view>
+  <view style='margin-bottom:80px;'>
+    <view class='main' wx:for="{{locationsInfo.recognitions}}" wx:key="this">
+      <view class='numbers'><text class='line'>————</text> <image src='../../images/bg1.png'></image> <text class='number'>{{index+1}}</text> <text class='line'>————</text></view>
+      <view class='img'> <image src="{{item.image}}" mode="aspectFill"></image> </view>
+      <view class='name'>{{item.name}}</view>
+       <view class='desc'>{{item.summary}}</view> 
+      <view class='location'><image src="../../images/icon1.png"></image><text>{{item.location}}</text><text>|</text><image src="../../images/icon2.png"></image><text>{{item.month}}月·{{item.season}}天</text></view>
+    </view>
+  </view>
+  <view style='height:20px;'></view>
+  <view class='feets'>
+    <!-- <view class='foot' wx:if="{{page==1}}">晒晒我的足迹</view> -->
+    <view class='feet'>
+      <view catchtap='_generateFoot'>生成我的足迹</view>
+      <view>分享给好友</view>
+    </view>
+  </view>
+</view>

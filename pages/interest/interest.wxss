@@ -1,0 +1,86 @@
+/* pages/interest/interest.wxss */
+.list{
+  padding-top: 10px;
+  padding-left: 10px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DFDFDF;
+}
+.list>view{
+  float: left;
+}
+.list .box1 image{
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.list .box2 .one image{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+.list .box2 .one text{
+  font-size: 14px; 
+  margin-left: 2px;
+}
+.list .box2 .two{
+  padding-left: 10px;
+  font-size: 12px;
+  color: #767676;
+  margin: 2px 0;
+}
+.list .box2 .three{
+  display:inline-block;
+  font-size: 12px;
+  color: #818181;
+  background: #F3F3F3;
+  padding: 2px 10px;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+.list .box3{
+  float: right;
+  margin-right: 10px;
+  /* line-height: 61px; */
+}
+/* 关注 */
+.list .box3 .attention{
+  display: block;
+  margin-top: 5px;
+  border: 1px solid #ef1600;
+  border-radius: 20px;
+  padding: 5px 10px; 
+  color:#ef1600;
+  font-size: 12px;
+}
+/* 已关注 */
+.already{
+  border: 1px solid #c6c6c6;
+  border-radius: 20px;
+  padding: 0px 10px; 
+  color:#656565;
+  font-size: 12px;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 8px;
+}
+.already image{
+  width: 10px;
+  height: 7px;
+  margin-right: 2px;
+}
+.none image{
+  width: 100px;
+  height: 90px;
+  display: block;
+  margin: 50px auto 10px;
+}
+.none{
+  text-align:center;
+  color: #CECECE;
+}
+
+

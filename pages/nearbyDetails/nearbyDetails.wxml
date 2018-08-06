@@ -1,0 +1,5 @@
+<!--pages/nearbyDetails/nearbyDetails.wxml--> 
+<nearbyDetails bind:back="_back" bind:attention="_attention" bind:cancleAttention="_cancleAttention" bind:more="_more" bind:personalPage="_personalPage" dataInfo="{{dataInfo}}" month="{{month}}" season="{{season}}" bind:remark="_remark" remarkContent="{{remarkContent}}" content="{{content}}" difference="{{difference}}" bind:generateFoot="_generateFoot" bind:confirmPlant="_confirmPlant" bind:person="_person" personid="{{personid}}"></nearbyDetails> 
+
+
+ 

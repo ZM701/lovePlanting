@@ -1,0 +1,27 @@
+<!--components/article/article.wxml-->
+<view class="plantContent">
+ <!-- 植物 -->
+  <view wx:for="{{searchPlant}}" wx:key="this" data-name="{{item.name}}" catchtap='_findDetail'>
+    <image src="{{item.image}}"></image> 
+    <view>
+      <text>{{item.name}}</text>
+      <text>{{item.distribution}}</text>
+    </view> 
+  </view>
+  <!-- 文章 -->
+  <view wx:for="{{searchArticle}}" wx:key="this" data-id="{{item.id}}" catchtap='_articleDetail'> 
+    <image src="https://imgs.nanniwan.com/{{item.image}}"></image> 
+    <view>
+      <text>{{item.title}}</text>
+      <text>{{item.subhead}}</text>
+    </view> 
+  </view>
+  <!-- 足迹 -->
+  <view wx:for="{{searchLocation}}" wx:key="this" data-locationId="{{item.locationId}}" catchtap='_locationDetail'> 
+    <image src="{{item.images[0]}}"></image> 
+    <view>
+      <text>{{item.name}}</text>
+       <text>{{item.content}}</text> 
+    </view> 
+  </view>
+</view>

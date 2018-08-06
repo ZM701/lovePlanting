@@ -1,0 +1,97 @@
+/* pages/moreComment/moreComment.wxss */
+.hot{
+  padding: 10px;
+}
+.hot .recomment{
+  overflow: hidden;
+}
+.hot .recomment .user image{
+  width: 40px;
+  height: 40px;
+}
+.hot .recomment .info{
+  width: 84%;
+  margin-left: 5px;
+}
+.hot .recomment .user,.hot .recomment .info{
+  float: left;
+}
+.hot .recomment .info .nick{
+  overflow: hidden;
+}
+.hot .recomment .info .nick>view{
+  float: left;
+  color: #60bc48;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.hot .recomment .info .nick>view:last-of-type{
+  float: right;
+}
+.hot .recomment .info .numbers{
+  display: block;
+  color: #999;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+.hot .recomment .info .recontent{
+  display: block;
+  color: #2d2d2d;
+  font-size: 14px;
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  border-bottom:1px solid #f3f3f3;
+}
+.hot .recomment .info .replay{
+  margin-top: 10px;
+  font-size: 14px;
+}
+.hot .recomment .info .replay>view{
+  margin-bottom: 4px;
+}
+.hot .recomment .info .replay text.first{
+  color: #60bc48;
+}
+
+.hot .recomment .info .thumbs image{
+  width: 14px;
+  height: 14px;
+}
+.hot .recomment .info .thumbs text{
+  font-size: 14px;
+  margin-left: 4px;
+  color: #999;
+}
+/* 回复 */
+.say{
+  overflow: hidden;
+  padding: 10px;
+  border-top: 1px solid #f8f8f8;
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+}
+.say>view{
+  float: left;
+}
+.say>view:first-of-type{
+  width: 73%
+}
+.say>view:first-of-type input{
+  widows: 100%;
+  height: 35px;
+  border:1px solid #e1e1e1;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 14px;
+}
+.say>view:last-of-type{
+  line-height: 35px;
+  margin-left: 4%;
+  color: #999;
+  font-size: 14px;
+  border:1px solid #e1e1e1;
+  padding: 0 14px;
+  border-radius: 5px;
+}

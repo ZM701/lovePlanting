@@ -1,0 +1,121 @@
+<!--components/nearbyDetails/nearbyDetails.wxml-->
+<view>
+<!-- 头部区域 -->
+  <view class='nav'>
+    <view class='bg'><image src="{{dataInfo.image}}" mode="aspectFill"></image></view>
+    <!-- <view class='navback'><image src="../../images/back.png" catchtap='_back'></image><image src="../../images/share.png"></image></view> -->
+    <view class='userIcon' data-uid='{{dataInfo.uid}}' catchtap='_personalPage'><image src="{{dataInfo.avatar}}"></image></view>
+  </view>
+  <!-- 主体区域 -->
+  <view class='userInfo' wx:if="{{difference==0}}">
+    <view class='users' wx:if="{{dataInfo.uid != personid}}">
+      <text class='attention' wx:if="{{dataInfo.isFollow == 0}}" catchtap='_attention'>+ 关注</text> 
+      <view class='res' wx:if="{{dataInfo.isFollow == 1}}" catchtap='_cancleAttention'><image src="../../images/icon6.png"></image>已关注</view>    
+    </view>
+    <view class='user'><text>{{dataInfo.nickname}}  上传于{{month || dataInfo.month}}月 {{season || dataInfo.season}}</text></view>
+    <view class='location'><image src="../../images/icon1.png"></image><text>{{dataInfo.location}} 距离我{{dataInfo.distance / 1000}}km</text></view>
+  </view>
+
+  <view  wx:if="{{difference==0}}" style='height:5px;background:#F5F8FA;margin:20px 0 10px 0;'></view>
+ 
+  <view class='confirms' catchtap='_confirmPlant' wx:if="{{difference==1}}">确认是此植物</view>
+
+  <!-- 文章名称 -->
+  <view class='article'>
+    <view class='title'>{{dataInfo.name}}</view>
+    <view class='otherName'><text>{{dataInfo.nameEn}}</text><text>{{dataInfo.family}}</text></view>
+    <view class='title'>简介美文</view>
+    <view class='content'>{{dataInfo.summary}}</view>
+    <view class='title'>形态特征</view>
+    <view class='content'>{{dataInfo.description}}</view>
+    <view class='title'>分布地区</view>
+    <view class='content'>{{dataInfo.distribution}}</view>
+  </view>
+  <!-- <view style='height:5px;background:#F5F8FA;margin:20px 0 10px 0;'></view> -->
+
+  <!-- 热门回复 -->
+  <!-- <view class='hot'>
+    <view class='title'>热门回复</view>
+    <view class='recomment'>
+      <view class='user'><image src="../../images/user.png"></image></view>
+      <view class='info'>
+        <text class='nick'>昵称</text>
+        <text class='numbers'>36楼 02-28</text>
+        <text class='recontent'>评论内容评论内容评论内容</text>
+        <view class='replay'>
+          <view class="arrow-up"></view>
+          <view class='res'>
+            <view class='re'><text>昵称：</text><text>评论内容评论内容评论内容</text></view>
+          </view>
+        </view>
+        <view class='thumbs'>
+          <view><image src='../../images/icon4.png'></image><text>35</text></view>
+          <view><image src='../../images/icon5.png'></image><text>35</text></view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+  <!-- 全部回复 -->
+  <!-- <view style='height:5px;background:#F5F8FA;margin:20px 0 10px 0;'></view>
+  <view class='hot'>
+    <view class='title'>全部回复</view>
+    <view class='recomment'>
+      <view class='user'><image src="../../images/user.png"></image></view>
+      <view class='info'>
+        <text class='nick'>昵称</text>
+        <text class='numbers'>36楼 02-28</text>
+        <text class='recontent'>评论内容评论内容评论内容</text>
+        <view class='replay'>
+          <view class="arrow-up"></view>
+          <view class='res'>
+            <view class='re'><text>昵称：</text><text>评论内容评论内容评论内容</text></view>
+            <view class='more' catchtap='_more'>更多N条评论 > </view>
+          </view>
+        </view>
+        <view class='thumbs'>
+          <view><image src='../../images/icon4.png'></image><text>顶</text></view>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+
+  <view wx:if="{{difference==0}}" class='hot' style="margin-top:10px; margin-bottom:40px;">
+    <view class='title' wx:if="{{remarkContent.length>0}}">全部评论</view>   
+    <view class='recomment' wx:for="{{remarkContent}}" wx:key="this">
+      <view class='user' data-uid="{{item.uid}}" catchtap='_person'><image src="{{item.avatar}}"></image></view>
+      <view class='info'>
+        <view class='relative'>
+          <text class='nick'>{{item.nickname}}</text>
+        </view>
+        <text class='numbers'>{{item.time}}</text>
+        <text class='recontent'>{{item.content}}</text>
+      </view>
+    </view>
+  </view> 
+  
+
+
+
+  <!-- 简单说几句 -->
+   <view class='say' wx:if="{{difference==0}}" >
+    <view><input type='text' name="content" placeholder='简单说几句' value="{{content}}" bindinput='content'></input></view>
+    <view catchtap='_remark'>评论</view>
+   </view> 
+
+   <view class='says' wx:if="{{difference==1}}" >
+    <view catchtap='_generateFoot'>生成我的足迹</view>
+    <view>分享给好友</view> 
+   </view> 
+
+
+  <!-- 简单说几句 -->
+  <!-- <view class='say'>
+    <view><input type='text' placeholder='简单说几句'></input></view>
+    <view>评论</view>
+  </view> -->
+    
+
+</view>
+
+

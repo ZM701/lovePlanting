@@ -1,0 +1,3 @@
+<!--pages/personalPage/personalPage.wxml-->
+<personalPage bind:back="_back" bind:footprintDetail="_footprintDetail" bind:identify="_identify" members="{{members}}" foot="{{foot}}" footLength=
+'{{footLength}}'></personalPage>

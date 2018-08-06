@@ -1,0 +1,52 @@
+/* pages/integral/integral.wxss */
+
+.integral{
+  padding: 24rpx 20rpx;
+}
+.add{
+  margin-bottom: 40rpx;
+}
+.title{
+  color: #4d4d4d;
+  font-size: 29rpx;
+}
+.content{
+  width: 100%;
+  margin-top: 30rpx;
+  border-top:1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5; 
+}
+.content>view{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  height: 52rpx;
+  line-height: 52rpx;
+  color: #7d7d7d;
+  font-size: 24rpx;
+}
+.content>view.top{
+  background: #f2f2f2;  
+  color: #666;
+  font-size: 26rpx;
+  
+}
+.one{
+  width: 270rpx;border-bottom:1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5; 
+}
+.two{
+   width: 200rpx;border-bottom:1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5; 
+}
+.three{
+   width: 260rpx;border-bottom:1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5; 
+}
+
+.user .content>view>view{
+width: 50%;border-bottom:1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5; 
+}
+
+

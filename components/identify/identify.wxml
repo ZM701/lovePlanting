@@ -1,0 +1,18 @@
+<!--components/identify/identify.wxml-->
+<view class='identify'>
+  <view class='res' wx:for="{{identifications}}" wx:key="this">
+    <view class='imgs' data-identificationId='{{item.identificationId}}' data-recognitionId="{{item.recognitionId}}" catchtap='_identifyDetail'><image src='{{item.image}}' mode="aspectFill"></image></view>
+    <view class='user'>
+      <view class='userImage'><image src='{{item.avatar}}' mode="aspectFill"></image></view>
+      <view class='nick'>
+        <image wx:if="{{item.gender==1}}" src="../../images/man.png"></image>
+        <image wx:if="{{item.gender==2}}" src="../../images/woman.png"></image>
+        <text>{{item.nickname}}</text>
+        <view style='clear:both;'></view>
+        <view class='ide' wx:if="{{item.name!=''}}">{{item.name}}</view>
+        <view class='ide' wx:else>未鉴别</view>
+      </view>
+    </view>
+  </view>
+</view>
+

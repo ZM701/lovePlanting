@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- tab导航栏 -->
+  <!-- scroll-left属性可以控制滚动条位置 -->
+  <!-- scroll-with-animation滚动添加动画过渡 -->
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+    </block>
+  </scroll-view>
+  <!-- <include src="../../components/Refresh/refreshHeaderView.wxml" /> -->
+<scroll-view class="scroll_container" scroll-y="true" style="position:fixed;width:100%;left:0;height:{{windowHeight}}px;top:{{loadMoreHeight == 0? refreshHeight+50:-loadMoreHeight-100}}px;bottom:{{loadMoreHeight}}px;"  bindscroll="scroll" bindscrolltolower="lower" bindscrolltoupper="upper" bindtouchstart="start" bindtouchend="end" > 
+<view style="width:100%;height:100%" bindtouchmove="move">
+  <!-- 页面内容 -->
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+    <swiper-item class="tab-content">
+      <!-- 第一块内容 -->
+      <view class='dynamic'>
+      <view><image src='../../images/img2.png'></image></view>
+      <view>
+        <text class='title'>牵牛花</text>
+        <view class='user'><image src='../../images/user.png' ></image><text>用户昵称</text></view>
+        <text class='time'>一天前</text>
+      </view>
+    </view>
+    <view class='dynamic'>
+      <view><image src='../../images/img2.png'></image></view>
+      <view>
+        <text class='title'>牵牛花</text>
+        <view class='user'><image src='../../images/user.png' ></image><text>用户昵称</text></view>
+        <text class='time'>一天前</text>
+      </view>
+    </view>
+    </swiper-item>
+    <swiper-item class="tab-content">
+      <!-- 第二块内容 -->
+     <view class='privateLetter'>
+      <view><image src='../../images/user.png' ></image></view>
+      <view>
+        <view class='user'><text>用户昵称</text><text>一天前</text></view>
+        <view class='desc'>飞流直下三千尺，疑是银河落九天。</view>
+      </view>
+    </view>
+    <view class='privateLetter'>
+      <view><image src='../../images/user.png' ></image></view>
+      <view>
+        <view class='user'><text>用户昵称</text><text>一天前</text></view>
+        <view class='desc'>飞流直下三千尺，疑是银河落九天。</view>
+      </view>
+    </view>
+    </swiper-item>
+    <swiper-item class="tab-content">
+      <!-- 第三块内容 -->
+      <view class='notice'>
+      <view>
+        <view class='user'><text>用户昵称</text><text>一天前</text></view>
+        <view class='desc'>飞流直下三千尺，疑是银河落九天。</view>
+      </view>
+    </view>
+    <view class='notice'>
+      <view>
+        <view class='user'><text>用户昵称</text><text>一天前</text></view>
+        <view class='desc'>飞流直下三千尺，疑是银河落九天。</view>
+      </view>
+    </view>
+    </swiper-item>
+  </swiper>
+</view>
+  </scroll-view>
+
+
+</view>

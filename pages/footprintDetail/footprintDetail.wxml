@@ -1,0 +1,2 @@
+<!--pages/footprintDetail/footprintDetail.wxml-->
+<footprint locationsInfo="{{locationsInfo}}" bind:attention="_attention" bind:cancleAttention="_cancleAttention" bind:generateFoot="_generateFoot" page="{{page}}"></footprint>

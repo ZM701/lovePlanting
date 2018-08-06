@@ -1,0 +1,16 @@
+<!--pages/sign/sign.wxml-->
+<view class='sign' style="min-height: {{windowHeight}}px;">
+  <view class='share'>
+    <view class='back' bindtap='goBack'><image src='../../images/back.png'></image></view>
+    <view class='shareIcon'><image src='../../images/share.png'></image></view>
+  </view>
+  <view class='content'>
+    <view class='main'>
+      <view><view class='fraction'><text class='one'>25</text><text class='two'></text><text class='three'>6</text></view><text class='four'>夏季</text></view>
+      <view class='cover'><image src="http://a2.att.hudong.com/86/35/01200000026044136323352568845_s.jpg"></image></view>
+    </view>
+    <view class='desc'>以前我只知道这种你那个植物叫爬山虎但是我不知道以前我只知道这种你那个植物叫爬山虎以前我只知道这种你那个植物叫爬山虎</view>
+    <view class='name'>—— 用户昵称</view>
+  </view>
+  <view class='integral'>我的积分58</view>
+</view>

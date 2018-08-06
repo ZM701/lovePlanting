@@ -1,0 +1,7 @@
+<!--pages/personalSign/personalSign.wxml-->
+<view class="change">
+   <view class="section">
+      <input placeholder="{{content}}" auto-focus bindinput="contentInput"/>
+   </view>
+   <button class="keep" bindtap="primary">保存</button>
+</view>

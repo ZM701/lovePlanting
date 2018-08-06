@@ -1,0 +1,181 @@
+/* components/footprint/footprint.wxss */
+.info{
+  text-align: center;
+}
+.info .name{
+  margin-top: 15px;
+}
+.info .name image{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.info .name text{
+  font-size: 15px;
+  color: #303030;
+  margin: 0 5px;
+}
+.info .user{
+  margin: 10px auto;
+}
+.info .user image{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.info .user text:first-of-type{
+  font-size: 14px;
+  color: #666;
+}
+.info .user text.attention{
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border:1px solid red;
+  color: red;
+  margin-left: 10px;
+}
+.rest{
+  display: inline-block;
+}
+.info .user view.res{
+  display: inline-block;
+  font-size: 14px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border:1px solid #e5e5e5;
+  color: #9a9a9a;
+  margin-left: 10px;
+}
+.info .user view.res image{
+  width: 11px;
+  height: 7px;
+}
+.info .mood{
+  font-size: 13px;
+  color: #303030;
+  margin-bottom: 8px;
+}
+.info .thumbs{
+  font-size: 14px;
+  color: #303030;
+  margin-bottom: 8px;
+}
+.numbers{
+  position: relative;
+  height: 30px;
+}
+.numbers image{
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  vertical-align: middle;
+  z-index: -11;
+  left: 48%;
+}
+.numbers .line:first-of-type{
+  position: absolute;
+  left: 20%;
+  color: #a9e29a;
+}
+.numbers .line:last-of-type{
+  position: absolute;
+  right: 18%;
+  color: #a9e29a;
+}
+.numbers .number{
+  position: absolute;
+  left: 50%;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+.main{
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.main .img{
+  width: 100%;
+  height: 200px;
+  background: #a9e29a;
+  margin-top: 8px;
+}
+.main .img image{
+  width: 100%;
+  height: 100%;
+}
+.main .name,.main .desc{
+  padding-left: 8px;
+  text-align: left;
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 5px;
+}
+.main .location{
+  text-align: left;
+  padding-left: 8px;
+}
+.main .location image:first-of-type{
+  width: 9px;
+  height: 12px; 
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.main .location image:last-of-type{
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.main .location text{
+  font-size: 11px;
+  color: #8f8f8f;
+}
+.main .location text:first-of-type{
+  color: #9a9a9a;
+  margin-right: 5px;
+}
+.feets{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  border-top: 1px solid #e5e5e5; 
+  padding: 8px 0px;
+}
+.foot{
+  background: #a9e29a;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  border-radius:5px;
+}
+.feet{
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px;
+}
+.feet view{
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+}
+.feet view:first-of-type{
+  font-size: 14px;
+  border:1px solid #a9e29a;
+  border-radius: 10px;
+  color: #a9e29a;
+  margin-right: 15px;
+}
+.feet view:last-of-type{
+  font-size: 14px;
+  color: #fff;
+  border-radius: 10px;
+  background: #a9e29a;
+}

@@ -1,0 +1,50 @@
+<!--pages/nearby/nearby.wxml--> 
+<import src="../template/footer/footer.wxml" />
+
+<view class="map_container">
+  <map class="map {{flage==true?'bottoms':''}}" id="myMap" show-location='true' longitude="{{lon}}" latitude="{{lat}}" scale="14" show-location  markers="{{marke}}" bindmarkertap="makertap"  bindregionchange="regionchange" bindtap='showNear'></map>
+</view>
+<view class="map_text" wx:if="{{flage==true}}">
+  <swiper  autoplay="{{autoplay}}"  duration="500" previous-margin="30px" next-margin="30px" width ="100%" circular="true" current="{{current}}">
+    <block wx:for="{{data}}">
+      <swiper-item>
+        <view class="scroll-view-item bc_green contbox" style='width:{{windowWidth-80}}px' data-recognitionId="{{item.recognitionId}}" data-longitude="{{item.longitude}}" data-latitude="{{item.latitude}}" data-month="{{item.month}}" data-season="{{item.season}}"
+          bindtap='nearbyDetail'>
+          <image class='mainLeft' src="{{item.image}}" mode='aspectFill'></image>
+          <view class='mainRight'>
+            <view class='name'>{{item.name}}</view>
+            <view class='otherName'>别名：{{item.nameEn}}</view>
+            <view class='kind'>分类：{{item.family}}</view>
+            <view class='user'>
+              <image class='userImg' src="{{item.avatar}}"></image>
+              <view class='userInfo'>
+                <view class='nick'>
+                  <image wx:if="{{item.gender==1}}" class='infoImage' src="../../images/man.png"></image>
+                  <image wx:if="{{item.gender==2}}" class='infoImage' src="../../images/woman.png"></image>
+                  <view class='nickName'>{{item.nickname}}</view>
+                </view>
+                <view>
+                  <view>{{item.month}}月 {{item.season}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+
+
+
+<cover-view class='top'>
+  <cover-image class='ims' src="../../images/search.png" mode="widthFix" bindtap="wxSearchTab"></cover-image>
+  <!-- <cover-image class='ims' src="../../images/msg.png" mode="widthFix" bindtap="message"></cover-image>
+  <cover-image class='ims' src="../../images/sign.png" mode="widthFix" bindtap="sign"></cover-image> -->
+</cover-view>
+
+
+
+
+<template is="footer" data="{{array_pl,array_pl1,array_pl2,array_pl3}}"></template>

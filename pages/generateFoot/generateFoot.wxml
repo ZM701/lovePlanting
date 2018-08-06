@@ -1,0 +1,35 @@
+<!--pages/generateFoot/generateFoot.wxml-->
+<view> 
+  <view class='total'>
+    <view wx:if="{{history.length==0}}" class='none'>你还没有任何足迹哦</view>
+    <checkbox-group bindchange="checkboxChange">
+      <block wx:for="{{history}}" wx:key="this">
+        <view class='box'>
+          <view class='one'>
+            <image src="{{item.image}}" mode="aspectFill"></image>           
+              <label class="checkbox">
+                <checkbox value="{{item.recognitionId}}"  class="choose" checked="{{item.checked}}"/>             
+              </label>         
+            <text class='name'>{{item.name}}</text>
+            <!-- <view class='cover' wx:if="{{checkedImages.length>=10}}"></view> -->
+          </view>
+          <view class='two'>{{item.location}}</view>
+          <view class='three'>{{item.month}}月 {{item.season}}</view>
+        </view>
+      </block>
+    </checkbox-group>
+  </view>
+  <view style='height:20px;'></view>
+  <view class='covers' wx:if="{{flage}}"></view>
+  <view class="btns" bindtap='btn' wx:if="{{history.length>0}}"><view class='btn'>生成足迹</view></view>
+</view>
+
+
+
+
+<form wx:if="{{flage}}">
+  <view class='layer1'><text bindtap='cancle'>取消</text><text bindtap='success'>完成</text></view>
+  <view class='layer2'><input type='text' placeholder='足迹名称(必填)' bindinput='input'></input></view>
+  <view class='layer3'><textarea placeholder="写下你此刻的心情" fixed="true" name="textarea" bindinput='text'/><text>0/250</text></view>
+</form>
+
